@@ -3,7 +3,7 @@ import json
 import re
 from django.shortcuts import render
 from django.http import HttpResponse
-from blog.models import User
+from blog.models import User, Reply
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -70,3 +70,11 @@ def submit_signin(request):
 def signout(request):
     logout(request)
     return redirect('index')
+
+def post_reply(request):
+    if request.method == 'POST':
+        reply = Reply(reply=request.POST.get('message'))
+        reply.save()
+        return render(request, 'blog/reply.html')    
+    return render(request, 'blog/reply.html')
+

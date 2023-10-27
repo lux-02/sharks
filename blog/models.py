@@ -37,3 +37,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+        
+class Reply(models.Model):
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    userid = models.AutoField(primary_key=True)
+    reply = models.TextField(max_length=500)
+    created_at = models.DateTimeField(auto_now_add=True)

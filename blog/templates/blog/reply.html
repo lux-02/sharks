@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'post_reply' %}">
+    {% csrf_token %}
+    <textarea id="text" name="message" rows="4" cols="50"></textarea>
+    <button type="submit">댓글 추가</button>
+</form>
