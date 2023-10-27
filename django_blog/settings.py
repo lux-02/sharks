@@ -135,3 +135,9 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:8000",
     "https://threatpost.com"
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+AUTH_USER_MODEL = 'blog.User' 

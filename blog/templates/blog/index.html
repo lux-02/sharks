@@ -12,7 +12,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'blog/assets/css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/join_modal.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/signin.css' %}">
 </head>
 <body class="landing">
     <!-- Header -->
@@ -21,8 +21,12 @@
         <nav id="nav">
             <ul>
                 <li><a href="/index">Home</a></li>
-                <li><a id="openModalBtn">Sign in</a></li>
-                <li><a href="/signup">Sign up</a></li>
+                {% if user.is_authenticated %}
+                    <li><a id="signOutBtn" href="/signout">Sign out</a></li>
+                {% else %}
+                    <li><a id="openModalBtn">Sign in</a></li>
+                    <li><a href="/signup">Sign up</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
@@ -55,8 +59,8 @@
     <section id="two" class="wrapper style2 special">
         <div class="container">
             <header class="major">
-                <h2>Fusce ultrices fringilla</h2>
-                <p>Maecenas vitae tellus feugiat eleifend</p>
+                <h2>Blog Preview</h2>
+                <p>Click the image to view the blog details.</p>
             </header>
             <div class="row 150%">
                 <div class="6u 12u$(xsmall)">
@@ -144,7 +148,8 @@
     <script src="{% static 'blog/assets/js/skel.min.js' %}"></script>
     <script src="{% static 'blog/assets/js/util.js' %}"></script>
     <script src="{% static 'blog/assets/js/main.js' %}"></script>
-    <script src="{% static 'blog/js/signin_modal.js' %}"></script>
+    <script src="{% static 'blog/js/signin.js' %}"></script>
+    <script src="{% static 'blog/js/signout.js' %}"></script>
     <script src="{% static 'blog/js/rss.js' %}"></script>
     <script defer src="{% static 'blog/js/google_map.js' %}"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKsxFjX0VxG9_vo1MEdsLPGyDCHRdK5PU&callback=initMap"></script>

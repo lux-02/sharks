@@ -4,15 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'blog/css/signup.css' %}">
     <title>Sign up</title>
 </head>
 <body>
-    <div class="login_image"><img src="{% static 'blog/images/login_logo.png' %}"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SHARKS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/index">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="login_image"><img src="{% static 'blog/images/signup_logo.png' %}"></div>
     <div class="login_form">Sign up to Sharks</div>
 <div class="container">
-    <form action="{% url 'submit_registration' %}" method="post" onsubmit="return validatePassword()">
+    <form action="{% url 'submit_registration' %}" id=signup_form method="post">
         {% csrf_token %}
 
         <label for="user_name">Username</label>
@@ -30,19 +53,6 @@
         <input type="submit" value="Sign Up">
     </form>
 </div>
-<script>
-    function validatePassword() {
-        var pw = document.getElementById('user_pw').value;
-        var re_pw = document.getElementById('re_pw').value;
-
-        if (pw !== re_pw) {
-            alert('Password do not match !');
-            return false;
-        }
-        alert('Registration successful !');
-        return true;
-    }
-
-</script>
+<script src="{% static 'blog/js/signup.js' %}"></script>
 </body>
 </html>
