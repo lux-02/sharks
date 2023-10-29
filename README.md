@@ -59,11 +59,14 @@
   python manage.py runserver
   ```
   <br>
-## 기능
+## UI 및 기능
 * 메인 페이지
   ![image](https://github.com/lux-02/sharks/assets/102010541/403a2872-ef59-4cac-9cdc-f74bbbaa14f0)<br>
-
-  
+* 블로그 페이지
+  ![2023-10-30 02;18;47](https://github.com/lux-02/sharks/assets/102010541/8402f42b-3c20-458e-a407-a65131cfa9aa)<br>
+* 글 작성 페이지
+  ![image](https://github.com/lux-02/sharks/assets/102010541/86fc0fab-b65d-4dc7-9e58-3a294ecacacc)<br>
+ 
 * 회원가입
   * 아이디와 이메일 중복 여부 확인
   * 패스워드 일치 여부 확인
