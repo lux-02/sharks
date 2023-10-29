@@ -1,11 +1,11 @@
-/*
 
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-*/
+
 
 .container-box {
     height: 100%;
@@ -25,6 +25,8 @@
     position: fixed; 
     top: 100px; 
     left: 120px; 
+    font-family: 'GangwonEdu_OTFBoldA', sans-serif;
+
 }
 
 .menu-title {
@@ -33,6 +35,7 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    font-family: 'GangwonEdu_OTFBoldA', sans-serif;
 }
 
 .menu-title img {
@@ -46,7 +49,7 @@
     display: block;
     text-decoration: none;
     color: black;
-    margin-left: 30px;
+    margin-left: 50px;
     font-size: 24px;
 }
 
@@ -71,10 +74,11 @@
     margin-left: 380px;
     padding-left: 30px;
     padding-top: 10px;
+    font-family: 'GangwonEdu_OTFBoldA', sans-serif;
 }
 
 .card-list {
-    font-size: 22px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
@@ -111,7 +115,6 @@
     padding-bottom: 7px;
     display: flex;
     color: rgb(134, 134, 134);
-    font-family: 'NanumGothic', sans-serif;
 }
 
 .card-line {
@@ -120,16 +123,10 @@
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
 }
 
-.card-subtitle {
-    font-size: 13.5px;
-    color: rgb(134, 134, 134);
-    margin-top: 1px;
-    font-weight: 500;
-}
 
 
 @media screen and (max-width: 1700px) {

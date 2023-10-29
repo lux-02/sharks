@@ -2,5 +2,5 @@
 var username = sessionStorage.getItem('username');
 
 if (username) {
-    document.querySelector('.card-list').textContent = sessionStorage.getItem('username') + "님께 추천해요 !";
+    document.querySelector('.card-list').textContent = "Recommended for" + sessionStorage.getItem('username') + '!';
 }
