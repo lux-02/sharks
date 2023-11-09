@@ -15,6 +15,9 @@ def index(request):
     request.session['previous_url'] = request.path
     return render(request, 'blog/index.html')
 
+def signin(request):
+    return render(request, 'blog/signin.html')
+
 def signup(request):
     return render(request, 'blog/signup.html')
 
@@ -52,10 +55,11 @@ def submit_signin(request):
             password = data.get('user_pw')
 
             user = authenticate(request, username=username, password=password)
-
+            previous_url = request.session.get('previous_url', '/')
+            
             if user is not None:
                 login(request, user)
-                response_data = {'message': 'Login successful !', 'user_name': username}
+                response_data = {'message': 'Login successful !', 'user_name': username, 'previous_url': previous_url}
                 return JsonResponse(response_data)
             else:
                 response_data = {'message': 'User not found'}

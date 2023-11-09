@@ -1,22 +1,4 @@
 
-
-document.getElementById('openModalBtn').addEventListener('click', function () {
-    document.getElementById('myModal').classList.add('show');
-});
-
-
-document.getElementById('closeModalBtn').addEventListener('click', function() {
-    document.getElementById('myModal').classList.remove('show');
-});
-
-window.onclick = function(event) {
-    const modal = document.getElementById('myModal');
-    if (event.target == modal && modal.classList.contains('show')) {
-        modal.classList.remove('show');
-    }
-}
-
-
 document.getElementById('signin_btn').addEventListener('click', function () {
     event.preventDefault()
     
@@ -37,8 +19,7 @@ document.getElementById('signin_btn').addEventListener('click', function () {
         if (data.message === 'Login successful !') {
             alert("Hello, " + data.user_name + "!");
             sessionStorage.setItem('username', data.user_name);
-            document.getElementById('myModal').classList.remove('show');
-            location.reload();
+            window.location.href = data.previous_url;
         } else {
             alert("User not found");
             document.getElementById('user_name').value = '';

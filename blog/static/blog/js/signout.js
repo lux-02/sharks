@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(response) {
                 if (response.status === 200) {
                     sessionStorage.removeItem('username');
-                    window.location.href = '/index/';
+                    location.reload();
                 } else {
                     console.error('Logout failed or error occurred');
                 }
